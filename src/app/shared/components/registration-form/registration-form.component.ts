@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { emailValidator } from "../../utils/email-validator";
 import { passwordValidator } from "../../utils/password-validator";
-import { fieldValidator } from "../../utils/field-validator";
+import { requiredValidator } from "../../utils/required-validator";
 
 @Component({
   selector: 'app-registration-form',
@@ -14,5 +14,5 @@ export class RegistrationFormComponent {
 
   emailFormControl = new FormControl('', [Validators.required, Validators.email, emailValidator ]);
   passwordFormControl = new FormControl('', [Validators.required, Validators.email, passwordValidator ]);
-  nameFormControl = new FormControl('', [Validators.required, fieldValidator]);
+  nameFormControl = new FormControl('', [Validators.required, requiredValidator]);
 }

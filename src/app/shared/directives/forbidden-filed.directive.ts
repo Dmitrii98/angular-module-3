@@ -1,9 +1,9 @@
 import { Directive } from '@angular/core';
 import { NG_VALIDATORS, FormControl, Validator } from '@angular/forms';
-import { fieldValidator } from "../utils/field-validator";
+import { requiredValidator } from "../utils/required-validator";
 
 @Directive({
-    selector: '[fieldValidator]',
+    selector: '[requiredValidator]',
     providers: [
         {
             provide: NG_VALIDATORS,
@@ -14,6 +14,6 @@ import { fieldValidator } from "../utils/field-validator";
 })
 export class FieldValidatorDirective implements Validator {
     validate(control: FormControl): { [key: string]: string } | null {
-        return fieldValidator(control);
+        return requiredValidator(control);
     }
 }
