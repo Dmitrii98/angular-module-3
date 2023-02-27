@@ -50,12 +50,13 @@
           <input
             type="number"
             id="duration"
+            name="duration"
             placeholder="Input duration"
-            [formControl]="durationFormControl"
             [(ngModel)]="durationValue"
+            #duration="ngModel"
           />
-          <div *ngIf="durationFormControl.hasError('invalidField') && durationFormControl.invalid && durationFormControl.touched">
-            <p class="error_text">{{durationFormControl.getError('invalidField')}}</p>
+          <div *ngIf="duration.errors?.['required']">
+            <p>Duration is required</p>
           </div>
           <div class="course__duration">
             <p>Duration: {{ durationValue | duration }}</p>

@@ -15,5 +15,4 @@ export class CourseFormComponent {
   durationValue: string = ''
   titleFormControl = new FormControl('', [Validators.required, requiredValidator]);
   descriptionFormControl = new FormControl('', [Validators.required, requiredValidator]);
-  durationFormControl = new FormControl('', [Validators.required, requiredValidator]);
 }
